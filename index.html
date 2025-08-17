@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Card</title>
+  <style>
+    body {
+      background-image: url('background.avif');
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      width: 98vw;
+      max-width: 500px;
+      min-height: 700px;
+      border-radius: 32px;
+      background-image: url('cardborder.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px 18px 32px 18px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .polaroid {
+      width: 180px;
+      height: 200px;
+      background: #fffefe;
+      border: 10px solid #d8b2d8;
+      background-image: url('Cassy2.png');
+      background-size: cover;
+      background-position: center;
+      transform: rotate(-10deg);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      z-index: 2;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .birthday-title {
+      font-family: 'Pacifico', 'Comic Sans MS', cursive, sans-serif;
+      font-size: 2.7rem;
+      color: #222;
+      text-align: left;
+      margin: 1 0 1vw 0;
+      margin-left: 220px;
+      margin-top: 48px;
+      line-height: 1.2;
+      z-index: 3;
+      position: relative;
+      text-shadow: 2px 2px 8px rgba(166,71,185,0.08);
+      word-break: break-word;
+    }
+    .media-row-wrap {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 32px;
+      gap: 16px;
+    }
+    .media-row {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      padding: 8px 18px 8px 18px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      min-width: 0;
+    }
+    .cassidy-name-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: 'Pacifico', 'Comic Sans MS', cursive, sans-serif;
+      font-size: 2rem;
+      color: #222;
+      text-shadow: 2px 2px 8px rgba(166,71,185,0.08);
+      line-height: 1.1;
+      margin: 0;
+      min-width: 0;
+    }
+    .cassidy-name-vertical span {
+      white-space: nowrap;
+    }
+    .media-row img {
+      width: 48px;
+      height: 48px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      object-fit: cover;
+      background: #fff;
+      margin-left: 12px;
+    }
+    .media-audio {
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      padding: 8px 18px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      height: 48px;
+      margin-top: 0;
+    }
+    .media-audio audio {
+      width: 160px;
+      max-width: 100%;
+      background: transparent;
+      border-radius: 24px;
+      outline: none;
+    }
+    .about-box {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.2em 1.5em;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 380px;
+      z-index: 1;
+      text-align: left;
+      margin-left: 0;
+      align-self: flex-start;
+    }
+    .about-box h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.7em 0;
+      color: #333;
+      font-weight: 600;
+    }
+    .about-box ol {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 1rem;
+      color: #333;
+    }
+    .about-box li {
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+    }
+    @media (max-width: 600px) {
+      .card {
+        max-width: 98vw;
+        min-height: 90vh;
+        padding: 70px 8px 24px 8px;
+      }
+      .polaroid {
+        width: 38vw;
+        min-width: 120px;
+        max-width: 150px;
+        height: 44vw;
+        min-height: 140px;
+        max-height: 170px;
+        top: 18px;
+        left: 12px;
+      }
+      .birthday-title {
+        font-size: 1.5rem;
+        margin-left: 44vw;
+        margin-top: 32px;
+      }
+      .media-row-wrap {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 24px;
+        width: 100%;
+        align-items: stretch;
+      }
+      .media-row {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 8px;
+      }
+      .cassidy-name-vertical {
+        font-size: 1.2rem;
+        align-items: center;
+      }
+      .media-row img {
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+      }
+      .media-audio {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 8px;
+      }
+      .media-audio audio {
+        width: 100% !important;
+        max-width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Birthday Card">
+    <div class="polaroid" aria-label="Polaroid photo"></div>
+    <h1 class="birthday-title">Happy<br>Birthday!</h1>
+    <div class="media-row-wrap">
+      <div class="media-row">
+        <div class="cassidy-name-vertical">
+          <span>Cassidy</span>
+          <span>Pagatpat</span>
+        </div>
+        <img src="CAT.png" alt="cat">
+      </div>
+      <div class="media-audio">
+        <audio controls>
+          <source src="bday.m4a" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+    <section class="about-box">
+      <h2>Things about You!</h2>
+      <ol>
+        <li>Likes Sports over feature, </li>
+        <li>Birthday is at August 17, 2011</li>
+        <li>Prefers Gold over silver and favourite color: Purple</li>
+        <li>Loves Seafood, Pasta, and korean foods</li>
+        <li>Sunrise over sunset</li>
+        <li>Likes Science over Math</li>
+        <li>Very hardworking and kind!</li>
+        <li>And loves Badminton and F1</li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>
